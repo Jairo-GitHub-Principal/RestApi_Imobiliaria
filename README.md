@@ -30,6 +30,7 @@ ficara assim:
 ![imagensDoprojeto_restWeb_api](https://user-images.githubusercontent.com/106206316/221329161-42acf146-b2f8-4154-91f6-275c1cddb13c.png)
 
 
+
 	
 
 Proximo passo: Preparar o projeto para trabalhar com EF core,  EntityFrameWorkCore
