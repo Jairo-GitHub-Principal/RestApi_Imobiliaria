@@ -29,6 +29,7 @@ namespace WebAPI_ImobiliariaSantos.Models
 
         [StringLength(1000)]
         public string imagemImovel {get;set;}
+                      
 
 
         

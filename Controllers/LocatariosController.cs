@@ -13,14 +13,14 @@ namespace WebAPI_ImobiliariaSantos.Controllers
     {
 
 
-        public IActionResult Cadastra(Locatarios locatarios)
+        public IActionResult Cadastra(Locatarios loc)
         {
-            if (!ModelState.IsValid) // faz validação no parametro recebido, nesse  caso, ele faz validação em "Imoveis imoveis"
+            if (!ModelState.IsValid) // faz validação no parametro recebido, nesse  caso, ele faz validação em "Locararios locatarios"
                 return BadRequest(ModelState);
 
             LocatarioServices lc = new LocatarioServices();
-            lc.CadastrarLocatario(locatarios);
-            return Ok(locatarios);
+            lc.CadastrarLocatario(loc);
+            return Ok(loc);
 
         }
 

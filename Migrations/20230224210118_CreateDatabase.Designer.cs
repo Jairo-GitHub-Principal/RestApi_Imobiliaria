@@ -8,8 +8,8 @@ using WebAPI_ImobiliariaSantos.Models;
 namespace WebAPI_ImobiliariaSantos.Migrations
 {
     [DbContext(typeof(ContextoDataBase))]
-    [Migration("20230223050119_CreateDatabase10")]
-    partial class CreateDatabase10
+    [Migration("20230224210118_CreateDatabase")]
+    partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,43 +58,27 @@ namespace WebAPI_ImobiliariaSantos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ImovelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("cpfLocatario")
-                        .HasColumnType("varchar(64) CHARACTER SET utf8mb4")
-                        .HasMaxLength(64);
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("dataLocLocatario")
-                        .HasColumnType("varchar(64) CHARACTER SET utf8mb4")
-                        .HasMaxLength(64);
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("dataNascLocatario")
-                        .HasColumnType("varchar(64) CHARACTER SET utf8mb4")
-                        .HasMaxLength(64);
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("dataVencimentoAlugLocatario")
-                        .HasColumnType("varchar(64) CHARACTER SET utf8mb4")
-                        .HasMaxLength(64);
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("imagemLocatario")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("nomeLocatario")
-                        .HasColumnType("varchar(64) CHARACTER SET utf8mb4")
-                        .HasMaxLength(64);
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ImovelId");
-
                     b.ToTable("locatarios");
-                });
-
-            modelBuilder.Entity("WebAPI_ImobiliariaSantos.Models.Locatarios", b =>
-                {
-                    b.HasOne("WebAPI_ImobiliariaSantos.Models.Imoveis", "Imovel")
-                        .WithMany()
-                        .HasForeignKey("ImovelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
